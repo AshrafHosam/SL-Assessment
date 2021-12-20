@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<SL_Assessment.Models.VideoBrief>
+
+<head>
+    <meta charset="utf-8">
+    <title>Etisalat Stars</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="~/css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+
+<body>
+
+    <!-- Start Container -->
+    <div class="row no-gutters">
+        <!-- this grid view is temporarily for web view but it's designed mainly for mobile view -->
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12 mx-auto">
+            <!-- stating main mobile design -->
+            <div class="main-container">
+
+                <!-- End side menu -->
+                <!--Start Page Content -->
+                <div class="content">
+
+                    <!-- Section acting mission -->
+                    <div class="Play-right">
+                        <!-- title -->
+                        <span class="d-block fs-16 font-weight-bold my-3 px-3 text-center mb-3">Tips from Our Stars</span>
+
+                        <div class="row mx-0">
+                            <!-- Repeatable Test Div -->
+                            @{
+                                foreach (VideoBrief vb in Model)
+                                {
+                                    <div class="col-12 mb-3">
+                                        <a>
+                                            <div class="w-100">
+                                                <div id="@vb.Id" onclick="ReplaceImageWithVideo(@vb.Id)">
+                                                    <img src="@Url.Content(vb.ImageUrl)" alt="" class="w-100 d-block" height="200">
+                                                    <img src="~/images/icons/video.svg" alt="" class="player-icon">
+                                                </div>
+                                                <video id="@("videoToPlay"+vb.Id)" controls hidden>
+                                                    <source src="~/videos/SampleVideo_360x240_1mb.mp4" type="video/mp4" />
+                                                    <source src=@Url.Content(vb.VideoUrl) type="video/mp4" />
+                                                </video>
+                                                <span class="d-block fs-16 font-weight-bold my-2">
+                                                    @vb.Title
+                                                </span>
+                                                <span class="d-block fs-14 mb-3">
+                                                    @vb.Description
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                <!--End Page Content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/progressbar.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script>
+        function ReplaceImageWithVideo(id) {
+            var divToReplace = document.getElementById(id);
+            var videoToPlay = document.getElementById('videoToPlay' + id);
+
+            divToReplace.hidden = true;
+            videoToPlay.hidden = false;
+
+            videoToPlay.addEventListener('ended', ReShow, false);
+            function ReShow() {
+                divToReplace.hidden = false;
+                videoToPlay.hidden = true;
+            }
+        }
+    </script>
+</body>

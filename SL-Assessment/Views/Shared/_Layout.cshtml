@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SL_Assessment</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="d-flex justify-content-between align-items-center bg-black py-3 fixed-top px-3">
+        <span class="text-white fs-24" id="menu-button">
+            <img src="~/images/icons/menu.svg" alt="Menu">
+            <!--<img src="~/images/icons/menu.svg" alt="Menu">-->
+        </span>
+        <span class="d-flex align-items-center">
+            <img src="~/images/etisalatstarslogo.svg" alt="logo">
+        </span>
+        <a href="#">
+            <img src="~/images/icons/user-prof.svg" alt="">
+        </a>
+    </div>
+    <!--End Header-->
+    <!-- Start side menu -->
+    <nav id="hide-menu" class="hide-menu">
+
+        <!-- <div class="d-flex justify-content-between align-items-center bg-black py-3 px-3">
+          <span class="d-flex align-items-center">
+            <img src="~/images/logo.png" alt="logo" class="mr-2">
+            <span class="fs-20 font-weight-bold">Etisalat Stars</span>
+          </span>
+          <img id="close_menu" src="~/images/icons/cancel.png" alt="Close">
+        </div> -->
+
+        <div class="bg-black d-flex justify-content-between align-items-center px-4 py-4">
+            <div class="d-flex justify-content-start align-items-center">
+                <img src="~/images/icons/user-prof.svg" alt="logo" class="mr-2" width="54" height="54">
+                <div>
+                    <span class="d-block primary-text fs-16 font-weight-bold">0122 000 0000</span>
+                    <span class="d-block fs-16 font-weight-bold">1100 Points</span>
+                </div>
+            </div>
+            <img id="close_menu" src="~/images/icons/cancel.svg" alt="Close" class="cursor-pointer">
+        </div>
+
+        <div class="px-4">
+            <ul class="list-unstyled">
+                <li class="border-bottom">
+                    <a href="#" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="border-bottom">
+                    <a href="tips.html" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                        <span>Tips from Our Stars</span>
+                    </a>
+                </li>
+                <li class="border-bottom">
+                    <a href="missions.html" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                        <span>Acting Missions</span>
+                    </a>
+                </li>
+                <li class="border-bottom">
+                    <a href="talent-videos.html" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                        <span>Talent Videos</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>
+@*
+        <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SL_Assessment</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - SL_Assessment - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>*@
